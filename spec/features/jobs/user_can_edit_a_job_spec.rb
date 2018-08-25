@@ -9,6 +9,10 @@ describe 'user can edit a job' do
 
     click_on "Edit"
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}/edit")
+    expect(current_path).to eq(edit_company_job_path(company, job))
+    expect(page).to have_field("Title")
+    expect(page).to have_field("Level of Interest")
+    expect(page).to have_field("City")
+    expect(page).to have_button("Submit")
   end
 end
