@@ -14,3 +14,5 @@ Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <form method="get">
   <a href="/companies/<%= @company.id %>/jobs/<%= @job.id %>/edit">Edit</a>
 </form>
+
+Category: <%= link_to @category.title, category_path(@category) %>
