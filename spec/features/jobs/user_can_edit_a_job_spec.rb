@@ -11,8 +11,8 @@ describe 'user can edit a job' do
 
     expect(current_path).to eq(edit_company_job_path(company, job))
     expect(page).to have_field("Title")
-    expect(page).to have_field("Level of Interest")
+    expect(page).to have_field("Level of interest")
     expect(page).to have_field("City")
-    expect(page).to have_button("Submit")
+    expect(page).to have_button("Update Job")
   end
 end
