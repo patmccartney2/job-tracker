@@ -27,6 +27,25 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+      if check_for_duplicate_category_name(category_params[:title]) == nil
+      @category.update(category_params)
+      if @category.save
+        flash[:success] = "#{@category.title} updated!"
+        redirect_to category_path(@category)
+      else
+        redirect_to edit_category_path(@category)
+      end
+    else
+      redirect_to edit_category_path(@category)
+    end
+  end
+
 
   private
 
