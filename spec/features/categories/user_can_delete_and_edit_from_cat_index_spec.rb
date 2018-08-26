@@ -31,6 +31,9 @@ end
       click_on("Delete")
 
       expect(current_path).to eq(categories_path)
+      within(".category-class") do
+        expect(page).to_not have_content("#{category.title}")
+      end
       expect(page).to have_content("#{category.title} was successfully deleted!")
     end
   end
