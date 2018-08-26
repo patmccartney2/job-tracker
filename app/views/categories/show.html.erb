@@ -2,7 +2,7 @@
 
 <% @category.jobs.each do |job| %>
 <ul>
-  <li><%= link_to job.title, company_job_path(job.company, job)%></li>
+  <li><%= link_to job.title, job_path(job)%></li>
 </ul>
 
 <% end %>

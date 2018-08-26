@@ -7,7 +7,9 @@ describe "User creates a new company" do
     fill_in "company[name]", with: "ESPN"
     click_button "Create"
 
-    expect(current_path).to eq("/companies/#{Company.last.id}/jobs")
+    company = Company.find_by(name: "ESPN")
+
+    expect(current_path).to eq(company_path(company))
     expect(page).to have_content("ESPN")
     expect(Company.count).to eq(1)
   end

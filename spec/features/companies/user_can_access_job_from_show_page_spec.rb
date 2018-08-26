@@ -6,10 +6,10 @@ describe 'user can access job show page from company show page' do
     company = Company.create!(name: "Spoogle")
     job = company.jobs.create!(title: "Killer Whale Killer", level_of_interest: 98, city: "Bethel", category_id: category.id)
 
-    visit company_path(company)
+    visit company_jobs_path(company)
 
     click_on "Killer Whale Killer"
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}")
+    expect(current_path).to eq(job_path(job))
   end
 end
