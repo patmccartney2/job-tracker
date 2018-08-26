@@ -17,11 +17,6 @@ describe Job do
         job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 80, category_id: 1)
         expect(job).to be_invalid
       end
-
-      it "is invalid without a category_id" do
-        job = Job.new(title: "Developer", description: "Wahoo", level_of_interest: 80)
-        expect(job).to be_invalid
-      end
     end
 
     context "valid attributes" do
