@@ -4,7 +4,7 @@ describe "User creates a new job" do
   scenario "a user can create a new job" do
     company = Company.create!(name: "ESPN")
     category = Category.create!(title: 'Tech')
-    visit new_company_job_path(company)
+    visit new_job_path
 
     fill_in "job[title]", with: "Developer"
     fill_in "job[description]", with: "So fun!"
@@ -16,7 +16,7 @@ describe "User creates a new job" do
 
     job = Job.find_by(city: "Denver")
 
-    expect(current_path).to eq(company_job_path(company, job))
+    expect(current_path).to eq(job_path(job))
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Developer")
     expect(page).to have_content("80")

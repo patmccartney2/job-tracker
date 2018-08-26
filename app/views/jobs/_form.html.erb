@@ -1,4 +1,4 @@
-<%= form_for [@company, @job] do |f| %>
+<%= form_for [@job] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -15,5 +15,10 @@
 
   <%= f.select :category_id , @categories.collect {|category| [category.title, category.id]} %>
 
+  <%= f.label :company_id %>
+
+  <%= f.select :company_id , @companies.collect {|company| [company.name, company.id]} %>
+
   <%= f.submit %>
+
 <% end %>

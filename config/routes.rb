@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :companies do
-    resources :jobs
-    end
+  resources :companies
 
+  get '/companies/:id/jobs', to: 'companies#job_index', as: :company_jobs
 
+  resources :jobs
+
+  resources :comments
+
+  # post '/jobs/:job_id', to: 'comments#create', as: :new_comment
   resources :categories
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

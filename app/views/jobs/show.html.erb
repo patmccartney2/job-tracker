@@ -12,7 +12,26 @@ City: <%= @job.city %>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
 <form method="get">
-  <a href="/companies/<%= @company.id %>/jobs/<%= @job.id %>/edit">Edit</a>
+  <a href='<%= edit_job_path(@job) %>'>Edit</a>
 </form>
 
 Category: <%= link_to @category.title, category_path(@category) %>
+<br>
+
+
+Comments:
+<%= form_for @comment do |f| %>
+  <%= hidden_field_tag "job_id", @job.id %>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<% @all_comments.each do |c| %>
+<ul>
+  <li><%= c.text %></li>
+  <li><%= c.created_at %></li>
+</ul>
+<% end %>
