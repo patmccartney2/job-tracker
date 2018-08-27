@@ -5,3 +5,13 @@
     <li><a href="/companies/<%= @company.id %>/jobs/<%= job.id %>"><%= job.title %></a></li>
   </ul>
 <% end %>
+
+<%= form_for [@company, @contact] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
+  <%= f.submit %>
+<% end %>

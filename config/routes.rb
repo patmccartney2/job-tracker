@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :companies
+  resources :companies do
+    resources :contacts, only: [:create, :update, :destroy, :edit]
+  end
 
   get '/companies/:id/jobs', to: 'companies#job_index', as: :company_jobs
 

@@ -12,12 +12,13 @@ describe 'company contacts' do
 
       fill_in("New Contact Name", :with => "Viktor")
       fill_in("New Contact Email", :with => "Viktor@gmail.com")
-      fill_in("New Contact Company", :with => "Evil Industries")
+      fill_in("Position", :with => "Stabber")
 
       click_on("Create New Contact")
 
       expect(current_path).to eq(company_path(company))
       expect(page).to have_content("Viktor@gmail.com")
       expect(page).to have_content("Viktor")
+      expect(page).to have_content("Stabber")
     end
   end
