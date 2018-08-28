@@ -1,0 +1,28 @@
+<h1>Dashboard</h1>
+
+<div id="count-by-interest">
+  <h3>Interest Tracker</h3>
+  <ul>
+    <% @jobs_loi.each do |job_hash| %>
+      <li>Jobs at Level of Interest <%= job_hash[0] %>: <%= job_hash[1] %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id='top-three-companies'>
+  <h3>Company Interest Tracker</h3>
+  <ul>
+    <% @companies.each do |company, big_d| %>
+      <li><%= company.name %>: <%= big_d.to_i %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id='jobs-by-location'>
+  <h3>Jobs By Location</h3>
+  <ul>
+    <% @jobs_bl.each do |location, amount| %>
+      <li><%= link_to location, "/jobs?location=#{location}" %>: <%= amount %> Jobs</li>
+    <% end %>
+  </ul>
+</div>

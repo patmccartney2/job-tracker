@@ -39,4 +39,24 @@ describe Job do
       expect(job).to respond_to(:category)
     end
   end
+  describe 'Class methods' do
+    it "should sort jobs by level of interest" do
+      category = Category.create(title: "Tech")
+      company = Company.new(name: "Turing")
+      job1 = Job.create(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category_id: category.id)
+      job2 = Job.create(title: "Jr Developer", level_of_interest: 45, city: "Denver", company: company, category_id: category.id)
+      job3 = Job.create(title: "Coffee guy", level_of_interest: 15, city: "Denver", company: company, category_id: category.id)
+
+      expect(Job.sort_by_level_of_interest).to eq([job2,job1,job3])
+    end
+    it "should filter jobs by location" do
+      category = Category.create(title: "Tech")
+      company = Company.new(name: "Turing")
+      job1 = Job.create(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category_id: category.id)
+      job2 = Job.create(title: "Jr Developer", level_of_interest: 45, city: "Anchorage", company: company, category_id: category.id)
+      job3 = Job.create(title: "Coffee guy", level_of_interest: 15, city: "Denver", company: company, category_id: category.id)
+
+      expect(Job.filter_by_location("Denver")).to eq([job1,job3])
+    end
+  end
 end
