@@ -10,11 +10,11 @@ describe 'company contacts' do
                       city: "New New York", category_id: category.id, company_id: company.id )
     visit company_path(company)
 
-      fill_in("New Contact Name", :with => "Viktor")
-      fill_in("New Contact Email", :with => "Viktor@gmail.com")
+      fill_in("Name", :with => "Viktor")
+      fill_in("Email", :with => "Viktor@gmail.com")
       fill_in("Position", :with => "Stabber")
 
-      click_on("Create New Contact")
+      click_on("Create Contact")
 
       expect(current_path).to eq(company_path(company))
       expect(page).to have_content("Viktor@gmail.com")

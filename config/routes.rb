@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/companies/:id/jobs', to: 'companies#job_index', as: :company_jobs
 
+  get '/dashboard', to: 'dashboard#index', as: :dashboard
+
   resources :jobs
 
   resources :comments

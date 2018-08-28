@@ -2,8 +2,13 @@ require 'pry'
 
 class JobsController < ApplicationController
   def index
-    # @company = Company.find(params[:company_id])
-    @jobs = Job.all
+    if params[:location]
+      @jobs = Job.filter_by_location(params[:location])
+    elsif params[:level_of_interest]
+      @jobs = Job.sort_by_level_of_interest
+    else
+      @jobs = Job.all
+    end
   end
 
   def new
