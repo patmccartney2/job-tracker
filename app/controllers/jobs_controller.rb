@@ -34,7 +34,7 @@ class JobsController < ApplicationController
     @company = Company.find(@job.company_id)
     @category = Category.find(@job.category_id)
     @comment = Comment.new()
-    @all_comments = Comment.where(job_id: @job.id)
+    @all_comments = Comment.where(job_id: @job.id).order(created_at: :desc)
   end
 
   def edit

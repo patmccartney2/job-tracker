@@ -1,21 +1,23 @@
 <h1>All Jobs for <strong><%= @company.name %></strong></h1>
 
+<%= link_to "Create New Job", new_job_path %>
+
 <% @company.jobs.each do |job| %>
-  <ul>
+  <ul class='category-class' >
     <li><%= link_to job.title, job_path(job) %></a></li>
   </ul>
 <% end %>
 
 <% @company.contacts.each do |contact| %>
-  <ul>
-    <li><%= contact.name %></li>
-    <li><%= contact.position %></li>
-    <li><%= contact.email %></li>
+  <ul class='contact-class'>
+    <li>Name: <%= contact.name %></li>
+    <li>Position: <%= contact.position %></li>
+    <li>Contact: <%= contact.email %></li>
   </ul>
-  <ul>
-    <li><%= link_to "Edit Contact", edit_company_contact_path(@company, contact) %></li>
-    <li><%= link_to "Delete Contact", company_contact_path(@company, contact), method: 'delete' %></li>
-  </ul>
+  <div class='edit-delete'>
+    <%= link_to "Edit Contact", edit_company_contact_path(@company, contact) %>
+    <%= link_to "Delete Contact", company_contact_path(@company, contact), method: 'delete' %>
+  </div>
 <% end %>
 
 <%= form_for [@company, @contact] do |f| %>

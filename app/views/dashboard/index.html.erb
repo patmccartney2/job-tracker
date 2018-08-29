@@ -1,6 +1,7 @@
 <h1>Dashboard</h1>
 
-<div id="count-by-interest">
+<div class='d-holder'>
+<div class='d-card' id="count-by-interest">
   <h3>Interest Tracker</h3>
   <ul>
     <% @jobs_loi.each do |job_hash| %>
@@ -9,7 +10,7 @@
   </ul>
 </div>
 
-<div id='top-three-companies'>
+<div class='d-card' id='top-three-companies'>
   <h3>Company Interest Tracker</h3>
   <ul>
     <% @companies.each do |company, big_d| %>
@@ -18,11 +19,13 @@
   </ul>
 </div>
 
-<div id='jobs-by-location'>
+<div class='d-card' id='jobs-by-location'>
   <h3>Jobs By Location</h3>
   <ul>
     <% @jobs_bl.each do |location, amount| %>
       <li><%= link_to location, "/jobs?location=#{location}" %>: <%= amount %> Jobs</li>
+      </br>
     <% end %>
   </ul>
+</div>
 </div>

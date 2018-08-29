@@ -12,18 +12,10 @@
     <%= content_tag :div, msg, class: name %>
   <% end %>
 <nav class="the-nav">
-  <div class="left-nav">
-    <ul class='left-list'>
-      <li><a href='<%= dashboard_path %>'>Dashboard</a></li>
-    </ul>
-  </div>
-  <div class="right-nav">
-    <ul class="right-list">
-      <li class='nav-list'><a href='<%= categories_path %>' >Categories</a></li>
-      <li class='nav-list'><a href='<%= companies_path %>'>Companies</a></li>
-      <li class='nav-list'><a href='<%= jobs_path %>'>Jobs</a></li>
-    </ul>
-  </div>
+    <a href='<%= dashboard_path %>'>Dashboard</a>
+    <a href='<%= categories_path %>' >Categories</a>
+    <a href='<%= companies_path %>'>Companies</a>
+    <a href='<%= jobs_path %>'>Jobs</a>
 </nav>
 <%= image_tag('fallout_terminal_effect.png') %>
 
