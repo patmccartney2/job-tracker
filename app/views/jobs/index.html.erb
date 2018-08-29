@@ -1,11 +1,14 @@
 <h1>All Jobs</h1>
-
-<ul>
+<%= link_to "Create New Job", new_job_path %>
+<br>
+<br>
+<ul class='category-class' >
   <% @jobs.each do |job| %>
-  <li class=job_<%= job.id %>>
+  <li class='job_<%= job.id %> list-style'>
     <%= link_to job.title, job_path(job) %>:
     <%= link_to "Edit", edit_job_path(job) %>
     <%= link_to "Delete", job_path(job), method: "delete" %>
   </li>
+  </br>
   <% end %>
 </ul>

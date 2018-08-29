@@ -4,12 +4,21 @@
   <title>JobTracker</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:600|VT323" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>
+<nav class="the-nav">
+    <a href='<%= dashboard_path %>'>Dashboard</a>
+    <a href='<%= categories_path %>' >Categories</a>
+    <a href='<%= companies_path %>'>Companies</a>
+    <a href='<%= jobs_path %>'>Jobs</a>
+</nav>
+<%= image_tag('fallout_terminal_effect.png') %>
+
 <%= yield %>
 
 </body>

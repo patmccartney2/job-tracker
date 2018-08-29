@@ -13,3 +13,119 @@
  *= require_tree .
  *= require_self
  */
+ a{
+   padding: 10px;
+   color: green;
+ }
+
+  a:hover{
+   border: 5px solid green;
+   padding: 5px;
+ }
+ a:visited {
+   color: white;
+ }
+ a:active {
+   background: green;
+   color: black;
+ }
+
+ .the-nav {
+   border-bottom:solid 1px transparent;
+   display: flex;
+   list-style: none;
+   justify-content: space-between;
+ }
+
+ body {
+   font-family: 'VT323', monospace;
+   text-align: center;
+   font-size: 24px;
+   background-color: black;
+   color: green;
+ }
+
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  opacity: 0.3;
+  background-repeat:round;
+  width: 100%;
+  height: 100%;
+}
+ .background-image {
+ }
+
+ .list-style {
+   list-style: none;
+ }
+
+ body h1 {
+   font-size: 80px;
+   color: green;
+ }
+
+ .d-holder {
+   display: flex;
+   justify-content: space-around;
+ }
+
+ .d-card li {
+   list-style: none;
+ }
+
+ .category-class {
+   list-style: none;
+ }
+
+input {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+}
+
+select {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+}
+
+textarea {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+.comment-time{
+  font-size: 12px;
+}
+
+.contact-class {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 40px 0px 40px;
+  border: 2px solid green;
+  padding-right: 30px;
+}
+
+.edit-delete {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.form-div {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}

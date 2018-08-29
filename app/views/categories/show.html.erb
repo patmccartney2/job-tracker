@@ -1,7 +1,7 @@
 <h1>Category: <%= @category.title %></h1>
 
 <% @category.jobs.each do |job| %>
-<ul>
+<ul class='category-class' >
   <li><%= link_to job.title, job_path(job)%></li>
 </ul>
 
